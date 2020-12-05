@@ -37,4 +37,8 @@ extension Endpoint {
         let querry = URLQueryItem(name: "q", value: name)
         return Endpoint(path: "repositories", queryItems: [querry])
     }
+    
+    static func searchBranches(ofOwner name: String, inRepo repo: String) -> Self {
+        return Endpoint(path: "repos/\(name)/\(repo)/branches")
+    }
 }

@@ -24,4 +24,9 @@ class EndpoinTest: XCTestCase {
         XCTAssertTrue(repoByNameEndpoint.url.absoluteString == "https://api.github.com/repositories?q=css", "Repo by name endpoint is incorrect")
     }
 
+    func testBranchesEndpoint() {
+        let branchesEndpoint = Endpoint.searchBranches(ofOwner: "octocat", inRepo: "hello-world")
+        XCTAssertTrue(branchesEndpoint.url
+                        .absoluteString == "https://api.github.com/repos/octocat/hello-world/branches", "Branches enpoint are in correct")
+    }
 }
