@@ -28,7 +28,6 @@ extension Owner {
 }
 
 //Branches
-
 struct Branch: Codable {
     let name: String?
     let protected: Bool?

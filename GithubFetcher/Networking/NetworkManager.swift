@@ -36,4 +36,8 @@ final class NetworkManager: Networking {
         self.config = config
     }
     
+    init() {
+        fatalError("init(config:) has not been implemented")
+    }
+    
 }
