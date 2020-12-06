@@ -28,6 +28,7 @@ extension Endpoint {
     }
 }
 
+//Utility
 extension Endpoint {
     static var repos: Self {
         Endpoint(path: "repositories")

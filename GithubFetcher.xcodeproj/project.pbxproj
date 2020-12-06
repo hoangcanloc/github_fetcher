@@ -15,6 +15,10 @@
 		FABD9D4D257B342600E66F97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FABD9D4B257B342600E66F97 /* LaunchScreen.storyboard */; };
 		FABD9E1D257BD28800E66F97 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD9E1C257BD28800E66F97 /* Endpoint.swift */; };
 		FABD9E26257BD2A900E66F97 /* EndpoinTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD9E25257BD2A900E66F97 /* EndpoinTest.swift */; };
+		FABD9E58257C778100E66F97 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD9E57257C778100E66F97 /* Networking.swift */; };
+		FABD9E5D257C77EF00E66F97 /* RepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD9E5C257C77EF00E66F97 /* RepositoryService.swift */; };
+		FABD9E62257C781900E66F97 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD9E61257C781900E66F97 /* Repository.swift */; };
+		FABD9E74257C918E00E66F97 /* RepositoryServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD9E73257C918E00E66F97 /* RepositoryServiceTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,10 @@
 		FABD9D59257B342600E66F97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FABD9E1C257BD28800E66F97 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		FABD9E25257BD2A900E66F97 /* EndpoinTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpoinTest.swift; sourceTree = "<group>"; };
+		FABD9E57257C778100E66F97 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		FABD9E5C257C77EF00E66F97 /* RepositoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryService.swift; sourceTree = "<group>"; };
+		FABD9E61257C781900E66F97 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		FABD9E73257C918E00E66F97 /* RepositoryServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryServiceTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +89,12 @@
 		FABD9D3F257B342500E66F97 /* GithubFetcher */ = {
 			isa = PBXGroup;
 			children = (
+				FABD9E6A257C8C7900E66F97 /* View */,
+				FABD9E60257C780F00E66F97 /* Model */,
+				FABD9E5B257C77E300E66F97 /* Service */,
 				FABD9E1B257BD27800E66F97 /* Networking */,
 				FABD9D40257B342500E66F97 /* AppDelegate.swift */,
 				FABD9D42257B342500E66F97 /* SceneDelegate.swift */,
-				FABD9D44257B342500E66F97 /* ViewController.swift */,
 				FABD9D46257B342500E66F97 /* Main.storyboard */,
 				FABD9D49257B342600E66F97 /* Assets.xcassets */,
 				FABD9D4B257B342600E66F97 /* LaunchScreen.storyboard */,
@@ -96,6 +106,7 @@
 		FABD9D56257B342600E66F97 /* GithubFetcherTests */ = {
 			isa = PBXGroup;
 			children = (
+				FABD9E72257C917400E66F97 /* ServiceTest */,
 				FABD9E24257BD28D00E66F97 /* NetworkingTest */,
 				FABD9D59257B342600E66F97 /* Info.plist */,
 			);
@@ -106,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				FABD9E1C257BD28800E66F97 /* Endpoint.swift */,
+				FABD9E57257C778100E66F97 /* Networking.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -116,6 +128,38 @@
 				FABD9E25257BD2A900E66F97 /* EndpoinTest.swift */,
 			);
 			path = NetworkingTest;
+			sourceTree = "<group>";
+		};
+		FABD9E5B257C77E300E66F97 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FABD9E5C257C77EF00E66F97 /* RepositoryService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		FABD9E60257C780F00E66F97 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FABD9E61257C781900E66F97 /* Repository.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FABD9E6A257C8C7900E66F97 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FABD9D44257B342500E66F97 /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FABD9E72257C917400E66F97 /* ServiceTest */ = {
+			isa = PBXGroup;
+			children = (
+				FABD9E73257C918E00E66F97 /* RepositoryServiceTest.swift */,
+			);
+			path = ServiceTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,8 +262,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FABD9E62257C781900E66F97 /* Repository.swift in Sources */,
 				FABD9D45257B342500E66F97 /* ViewController.swift in Sources */,
+				FABD9E58257C778100E66F97 /* Networking.swift in Sources */,
 				FABD9D41257B342500E66F97 /* AppDelegate.swift in Sources */,
+				FABD9E5D257C77EF00E66F97 /* RepositoryService.swift in Sources */,
 				FABD9E1D257BD28800E66F97 /* Endpoint.swift in Sources */,
 				FABD9D43257B342500E66F97 /* SceneDelegate.swift in Sources */,
 			);
@@ -230,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FABD9E26257BD2A900E66F97 /* EndpoinTest.swift in Sources */,
+				FABD9E74257C918E00E66F97 /* RepositoryServiceTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
