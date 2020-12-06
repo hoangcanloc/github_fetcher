@@ -7,6 +7,10 @@
 
 import Foundation
 
+struct Wrapper: Codable {
+    let items: [Repository]
+}
+
 struct Repository: Codable {
     let name: String?
     let owner: Owner?

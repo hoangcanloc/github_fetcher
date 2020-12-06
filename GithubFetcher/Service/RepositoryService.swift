@@ -7,26 +7,29 @@
 
 import Foundation
 
-struct RepositoryService: Networking {
+protocol RepoProviding {
+    var network: Networking { get }
     
-    typealias T = Repository
+    func getRepositories(_ completion: @escaping (Result<[Repository], Error>) -> Void)
     
-    func fetchList(with request: URLRequest, then handler: @escaping (Result<[Repository], Error>) -> Void)  {
-        let session = URLSession.shared
-        let task = session.dataTask(with: request) { (data, _, error) in
-            if let data = data, let repos = try? JSONDecoder().decode([Repository].self, from: data) {
-                handler(.success(repos))
-            }
-            
-            if let error = error {
-                handler(.failure(error))
-            }
-        }
-        task.resume()
+    func findRepositoriesByName(_ name: String, _ completion: @escaping (Result<Wrapper, Error>) -> Void)
+}
+
+extension RepoProviding {
+    func getRepositories(_ completion: @escaping (Result<[Repository], Error>) -> Void) {
+        network.execute(Endpoint.repos, completion: completion)
     }
     
-    func fetch(with request: URLRequest, then handler: @escaping (Result<Repository, Error>) -> Void) {
-        
+    func findRepositoriesByName(_ name: String, _ completion: @escaping (Result<Wrapper, Error>) -> Void) {
+        network.execute(Endpoint.searchRepo(byName: name), completion: completion)
+    }
+}
+
+struct RepositoryService: RepoProviding {
+    var network: Networking
+    
+    init(network: Networking) {
+        self.network = network
     }
     
 }

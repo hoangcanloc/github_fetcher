@@ -8,19 +8,23 @@
 import XCTest
 @testable import GithubFetcher
 
+struct NetworkManager: Networking {
+   
+}
+
 class RepositoryServiceTest: XCTestCase {
 
     override class func setUp() {
         
     }
 
-    func testFetchRepoList() {
+    func testFetchRepositories() {
         let expectation = XCTestExpectation(description: "Fetch list repository from github successfully")
-        let reposService = RepositoryService()
-        reposService.fetchList(with: URLRequest(url: Endpoint.repos.url)) { (result) in
+        let reposService = RepositoryService(network: NetworkManager())
+        reposService.getRepositories { (result) in
             switch result {
             case .success(let repos):
-                XCTAssertNotNil(repos, "Not data was downloaded")
+                XCTAssertNotNil(repos, "No data was downloaded")
             case .failure(_):
                 return
             }
@@ -29,6 +33,19 @@ class RepositoryServiceTest: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
 
-    
+    func testFetchRepositoriesByName() {
+        let expectation = XCTestExpectation(description: "Fetch list repository by name from github successfully")
+        let reposService = RepositoryService(network: NetworkManager())
+        reposService.findRepositoriesByName("css") { (result) in
+            switch result {
+            case .success(let repos):
+                XCTAssertNotNil(repos, "No data was downloaded")
+            case .failure(_):
+                return
+            }
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 10.0)
+    }
 
 }
