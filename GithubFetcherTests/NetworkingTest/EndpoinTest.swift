@@ -21,7 +21,7 @@ class EndpoinTest: XCTestCase {
     
     func testRepoByNameEndpoint() {
         let repoByNameEndpoint = Endpoint.searchRepo(byName: "css")
-        XCTAssertTrue(repoByNameEndpoint.url.absoluteString == "https://api.github.com/repositories?q=css", "Repo by name endpoint is incorrect")
+        XCTAssertTrue(repoByNameEndpoint.url.absoluteString == "https://api.github.com/search/repositories?q=css", "Repo by name endpoint is incorrect")
     }
 
     func testBranchesEndpoint() {

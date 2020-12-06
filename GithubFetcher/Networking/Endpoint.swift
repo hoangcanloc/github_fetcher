@@ -36,7 +36,7 @@ extension Endpoint {
     
     static func searchRepo(byName name: String) -> Self {
         let querry = URLQueryItem(name: "q", value: name)
-        return Endpoint(path: "repositories", queryItems: [querry])
+        return Endpoint(path: "search/repositories", queryItems: [querry])
     }
     
     static func searchBranches(ofOwner name: String, inRepo repo: String) -> Self {
