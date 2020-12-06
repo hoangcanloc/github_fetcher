@@ -39,7 +39,7 @@ extension Endpoint {
         return Endpoint(path: "search/repositories", queryItems: [querry])
     }
     
-    static func searchBranches(ofOwner name: String, inRepo repo: String) -> Self {
-        return Endpoint(path: "repos/\(name)/\(repo)/branches")
+    static func searchBranches(in repo: String, ownedBy owner: String) -> Self {
+        return Endpoint(path: "repos/\(owner)/\(repo)/branches")
     }
 }

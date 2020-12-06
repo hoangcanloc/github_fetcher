@@ -25,7 +25,7 @@ class EndpoinTest: XCTestCase {
     }
 
     func testBranchesEndpoint() {
-        let branchesEndpoint = Endpoint.searchBranches(ofOwner: "octocat", inRepo: "hello-world")
+        let branchesEndpoint = Endpoint.searchBranches(in: "hello-world", ownedBy: "octocat")
         XCTAssertTrue(branchesEndpoint.url
                         .absoluteString == "https://api.github.com/repos/octocat/hello-world/branches", "Branches enpoint are in correct")
     }

@@ -8,7 +8,9 @@
 import Foundation
 
 protocol Networking {
+    
     func prepareRequest(for endpoint: Endpoint) -> URLRequest
+    
     func execute<T: Decodable>(_ endpoint: Endpoint, completion: @escaping((Result<T, Error>) -> Void))
     
 }

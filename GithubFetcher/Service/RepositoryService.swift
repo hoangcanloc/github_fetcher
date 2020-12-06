@@ -13,6 +13,8 @@ protocol RepoProviding {
     func getRepositories(_ completion: @escaping (Result<[Repository], Error>) -> Void)
     
     func findRepositoriesByName(_ name: String, _ completion: @escaping (Result<Wrapper, Error>) -> Void)
+    
+    func findBranches(in repo: String, ownedBy owner: String, _ completion: @escaping (Result<[Branch], Error>) -> Void)
 }
 
 extension RepoProviding {
@@ -22,6 +24,10 @@ extension RepoProviding {
     
     func findRepositoriesByName(_ name: String, _ completion: @escaping (Result<Wrapper, Error>) -> Void) {
         network.execute(Endpoint.searchRepo(byName: name), completion: completion)
+    }
+    
+    func findBranches(in repo: String, ownedBy owner: String, _ completion: @escaping (Result<[Branch], Error>) -> Void) {
+        network.execute(Endpoint.searchBranches(in: repo, ownedBy: owner), completion: completion)
     }
 }
 

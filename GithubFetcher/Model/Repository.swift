@@ -7,8 +7,9 @@
 
 import Foundation
 
+//Repo
 struct Wrapper: Codable {
-    let items: [Repository]
+    let items: [Repository]?
 }
 
 struct Repository: Codable {
@@ -17,7 +18,7 @@ struct Repository: Codable {
 }
 
 struct Owner: Codable {
-    let name: String
+    let name: String?
 }
 
 extension Owner {
@@ -25,3 +26,11 @@ extension Owner {
         case name = "login"
     }
 }
+
+//Branches
+
+struct Branch: Codable {
+    let name: String?
+    let protected: Bool?
+}
+
