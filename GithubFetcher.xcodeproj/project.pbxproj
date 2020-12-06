@@ -19,6 +19,7 @@
 		FABD9E5D257C77EF00E66F97 /* RepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD9E5C257C77EF00E66F97 /* RepositoryService.swift */; };
 		FABD9E62257C781900E66F97 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD9E61257C781900E66F97 /* Repository.swift */; };
 		FABD9E74257C918E00E66F97 /* RepositoryServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD9E73257C918E00E66F97 /* RepositoryServiceTest.swift */; };
+		FABD9E7E257CF59500E66F97 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD9E7D257CF59500E66F97 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		FABD9E5C257C77EF00E66F97 /* RepositoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryService.swift; sourceTree = "<group>"; };
 		FABD9E61257C781900E66F97 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		FABD9E73257C918E00E66F97 /* RepositoryServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryServiceTest.swift; sourceTree = "<group>"; };
+		FABD9E7D257CF59500E66F97 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 			children = (
 				FABD9E1C257BD28800E66F97 /* Endpoint.swift */,
 				FABD9E57257C778100E66F97 /* Networking.swift */,
+				FABD9E7D257CF59500E66F97 /* NetworkManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				FABD9D45257B342500E66F97 /* ViewController.swift in Sources */,
 				FABD9E58257C778100E66F97 /* Networking.swift in Sources */,
 				FABD9D41257B342500E66F97 /* AppDelegate.swift in Sources */,
+				FABD9E7E257CF59500E66F97 /* NetworkManager.swift in Sources */,
 				FABD9E5D257C77EF00E66F97 /* RepositoryService.swift in Sources */,
 				FABD9E1D257BD28800E66F97 /* Endpoint.swift in Sources */,
 				FABD9D43257B342500E66F97 /* SceneDelegate.swift in Sources */,

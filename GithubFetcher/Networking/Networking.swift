@@ -8,14 +8,14 @@
 import Foundation
 
 protocol Networking {
-   
+    func prepareRequest(for endpoint: Endpoint) -> URLRequest
     func execute<T: Decodable>(_ endpoint: Endpoint, completion: @escaping((Result<T, Error>) -> Void))
     
 }
 
 extension Networking {
     func execute<T: Decodable>(_ endpoint: Endpoint, completion: @escaping((Result<T, Error>) -> Void)) {
-        let urlRequest = URLRequest(url:endpoint.url)
+        let urlRequest = self.prepareRequest(for: endpoint)
         URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             do {
                 if let error = error {
